@@ -1,0 +1,15 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<div class="box">
+    <h2>Sign up</h2>
+    <p>Choose the type of account you want to create.</p>
+
+    <div class="links">
+        <a class="btn" href="{% url 'student_signup' %}">I am a student</a>
+        <a class="btn secondary" href="{% url 'teacher_signup' %}">I am a teacher</a>
+    </div>
+
+    <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+</div>
+{% endblock %}

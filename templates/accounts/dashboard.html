@@ -1,0 +1,21 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<div class="box">
+    <h2>Dashboard</h2>
+    <p>Welcome, {{ user.username }}.</p>
+    <p>Your account type is: <strong>{{ role|title }}</strong></p>
+
+    <div class="links">
+        {% if role == 'admin' %}
+            <a class="btn" href="{% url 'admin_page' %}">Admin Page</a>
+            <a class="btn" href="{% url 'teacher_page' %}">Teacher Area</a>
+            <a class="btn" href="{% url 'student_page' %}">Student Area</a>
+        {% elif role == 'teacher' %}
+            <a class="btn" href="{% url 'teacher_page' %}">Teacher Area</a>
+        {% else %}
+            <a class="btn" href="{% url 'student_page' %}">Student Area</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
